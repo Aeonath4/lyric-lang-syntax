@@ -9,7 +9,7 @@ This directory contains the official **Lyric language extension** for Visual Stu
 1. Open this folder in VSCode:
 
 ```
-lyric-syntax/vscode/lyric-lang/
+lyric-lang-syntax/vscode/lyric-lang/
 ```
 
 2. Press **F5** to launch a new **Extension Development Host**.
@@ -31,7 +31,7 @@ Developer: Install Extension from Location...
 3. Select the folder:
 
 ```
-lyric-syntax/vscode/lyric-lang/
+lyric-lang-syntax/vscode/lyric-lang/
 ```
 4. Restart VSCode — `.ly` files should now highlight automatically.
 
