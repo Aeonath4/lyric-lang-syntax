@@ -25,11 +25,15 @@
     "control": {
       "patterns": [
         {
-          "match": "\\b(if|else|end|given|for|done|try|catch|finally|fade|raise|importpy|break|continue)\\b",
+          "match": "\\belse\\s+if\\b",
           "name": "keyword.control.flow.lyric"
         },
         {
-          "match": "\\belse\\s+if\\b",
+          "match": "\\b(else|end|given|for|done|try|catch|finally|fade|raise|importpy|break|continue)\\b",
+          "name": "keyword.control.flow.lyric"
+        },
+        {
+          "match": "\\bif\\b",
           "name": "keyword.control.flow.lyric"
         }
       ]
