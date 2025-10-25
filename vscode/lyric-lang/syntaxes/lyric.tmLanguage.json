@@ -25,7 +25,11 @@
     "control": {
       "patterns": [
         {
-          "match": "\\b(if|elif|else|end|given|for|done|try|catch|finally|fade|raise|importpy|break|continue)\\b",
+          "match": "\\b(if|else|end|given|for|done|try|catch|finally|fade|raise|importpy|break|continue)\\b",
+          "name": "keyword.control.flow.lyric"
+        },
+        {
+          "match": "\\belse\\s+if\\b",
           "name": "keyword.control.flow.lyric"
         }
       ]
@@ -79,13 +83,31 @@
     "regex": {
       "patterns": [
         {
-          "begin": "/",
-          "end": "/",
-          "name": "string.regex.lyric",
+          "begin": "\\bregex\\s*\\(",
+          "end": "\\)",
+          "name": "support.function.builtin.lyric",
           "patterns": [
             {
-              "match": "\\\\.",
-              "name": "constant.character.escape.lyric"
+              "begin": "\"",
+              "end": "\"",
+              "name": "string.regex.lyric",
+              "patterns": [
+                {
+                  "match": "\\\\.",
+                  "name": "constant.character.escape.lyric"
+                }
+              ]
+            },
+            {
+              "begin": "'",
+              "end": "'",
+              "name": "string.regex.lyric",
+              "patterns": [
+                {
+                  "match": "\\\\.",
+                  "name": "constant.character.escape.lyric"
+                }
+              ]
             }
           ]
         }
@@ -94,7 +116,7 @@
     "builtins": {
       "patterns": [
         {
-          "match": "\\b(print|input|int|float|str|len|range|type|isinstance|open|append|keys|values)\\b",
+          "match": "\\b(print|input|int|float|str|len|range|type|isinstance|open|regex|append|keys|values)\\b",
           "name": "support.function.builtin.lyric"
         }
       ]

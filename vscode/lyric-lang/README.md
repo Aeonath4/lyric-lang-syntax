@@ -6,17 +6,18 @@ Official VSCode extension providing comprehensive syntax highlighting and langua
 
 ### Syntax Highlighting
 - **Keywords**: `def`, `class`, `var`, `int`, `str`, `flt`, `god`, `bin`, `rex`, `pyobject`, `None`, `return`
-- **Control Flow**: `if`, `elif`, `else`, `end`, `given`, `for`, `done`, `try`, `catch`, `finally`, `fade`, `raise`, `importpy`, `break`, `continue`
+- **Control Flow**: `if`, `else if`, `else`, `end`, `given`, `for`, `done`, `try`, `catch`, `finally`, `fade`, `raise`, `importpy`, `break`, `continue`
 - **Logical Operators**: `and`, `or`, `not`, `in`, `as`
-- **Built-in Functions**: `print`, `input`, `int`, `float`, `str`, `len`, `range`, `type`, `isinstance`, `open`, `append`, `keys`, `values`
-- **Literals**: Numbers, strings (single and double quotes), regex patterns, boolean values (`true`, `false`, `True`, `False`)
+- **Built-in Functions**: `print`, `input`, `int`, `float`, `str`, `len`, `range`, `type`, `isinstance`, `open`, `regex`, `append`, `keys`, `values`
+- **Literals**: Numbers, strings (single and double quotes), boolean values (`true`, `false`, `True`, `False`)
+- **Regex Patterns**: Constructor-based syntax `regex("/pattern/")` with proper highlighting
 - **Comments**: `#` style comments
 - **Operators**: Arithmetic, comparison, and assignment operators
 - **Special Symbols**: `+++`, `self`
 
 ### Language Configuration
 - **Bracket Matching**: Automatic matching for `{}`, `()`, `[]`, and Lyric-specific pairs (`class`/`+++`, `try`/`fade`, `given`/`done`, `for`/`done`, `if`/`end`)
-- **Auto-closing Pairs**: Automatic closing of quotes, brackets, and regex delimiters
+- **Auto-closing Pairs**: Automatic closing of quotes and brackets
 - **Code Folding**: Foldable blocks for `class`, `try`, `given`, `for`, and `if` statements
 - **Word Pattern**: Proper identifier recognition for Lyric variables and functions
 
@@ -36,11 +37,12 @@ Official VSCode extension providing comprehensive syntax highlighting and langua
 5. Wait for the success message, then reload VS Code if prompted.
 
 ## Version
-**0.6.0** - Updated for Lyric 0.6.0 with comprehensive language support including:
+**0.6.4** - Updated for Lyric 0.6.4 with comprehensive language support including:
 - Constructor recognition (`def ClassName()`)
 - Exception type binding (`catch IndexError as e`)
 - Loop control (`break`, `continue`)
 - Shebang support
 - Function return type specification
+- Regex constructor syntax (`regex("/pattern/")`)
 - Enhanced syntax highlighting and language configuration
 
