@@ -3,7 +3,7 @@
   "displayName": "Lyric Language Support",
   "description": "Official VSCode extension providing syntax highlighting and language configuration for the Lyric programming language.",
   "version": "0.6.0",
-  "publisher": "MiraNova Studios",
+  "publisher": "miranovastudios",
   "license": "MIT",
   "repository": {
     "type": "git",
