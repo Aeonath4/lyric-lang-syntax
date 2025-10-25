@@ -1,0 +1,46 @@
+{
+  "name": "lyric-lang",
+  "displayName": "Lyric Language Support",
+  "description": "Official VSCode extension providing syntax highlighting and language configuration for the Lyric programming language.",
+  "version": "0.6.0",
+  "publisher": "MiraNova Studios",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aeonath4/lyric-lang-syntax"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages"],
+  "keywords": ["lyric", "syntax", "highlighting", "language", "programming"],
+  "icon": "icon.png",
+  "homepage": "https://lyric-lang.org",
+  "bugs": {
+    "url": "https://miranova.studio/contact.html"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "lyric",
+        "aliases": ["Lyric", "lyric"],
+        "extensions": [".ly"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lyric",
+        "scopeName": "source.lyric",
+        "path": "./syntaxes/lyric.tmLanguage.json"
+      }
+    ]
+  },
+  "maintainers": [
+    {
+      "name": "Michael (Aeonath)",
+      "email": "aeonath4@gmail.com",
+      "url": "https://miranova.studio/lyric.html"
+    }
+  ]
+}
