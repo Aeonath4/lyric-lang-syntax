@@ -8,7 +8,9 @@
     ["[", "]"],
     ["class", "+++"],
     ["try", "fade"],
-    ["given", "done"]
+    ["given", "done"],
+    ["for", "done"],
+    ["if", "end"]
   ],
   "autoClosingPairs": [
     { "open": "(", "close": ")" },
@@ -28,8 +30,8 @@
   ],
   "folding": {
     "markers": {
-      "start": "^\\s*(class|try|given)\\b",
-      "end": "^\\s*(\\+\\+\\+|fade|done)\\b"
+      "start": "^\\s*(class|try|given|for|if)\\b",
+      "end": "^\\s*(\\+\\+\\+|fade|done|end)\\b"
     }
   },
   "wordPattern": "[A-Za-z_][A-Za-z0-9_]*"

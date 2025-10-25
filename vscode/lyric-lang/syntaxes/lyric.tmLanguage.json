@@ -9,13 +9,15 @@
     { "include": "#strings" },
     { "include": "#regex" },
     { "include": "#numbers" },
-    { "include": "#builtins" }
+    { "include": "#builtins" },
+    { "include": "#operators" },
+    { "include": "#symbols" }
   ],
   "repository": {
     "keywords": {
       "patterns": [
         {
-          "match": "\\b(def|class|var|god|bin|int|flt|str|rex|pyobject|None|based|on|public|private|protected)\\b",
+          "match": "\\b(def|class|var|god|bin|int|flt|str|rex|pyobject|None|return)\\b",
           "name": "keyword.declaration.lyric"
         }
       ]
@@ -23,7 +25,7 @@
     "control": {
       "patterns": [
         {
-          "match": "\\b(if|else if|else|end|given|done|try|catch|finally|fade|raise|return|break|continue|importpy)\\b",
+          "match": "\\b(if|elif|else|end|given|for|done|try|catch|finally|fade|raise|importpy|break|continue)\\b",
           "name": "keyword.control.flow.lyric"
         }
       ]
@@ -31,7 +33,7 @@
     "logical": {
       "patterns": [
         {
-          "match": "\\b(and|or|not)\\b",
+          "match": "\\b(and|or|not|in|as)\\b",
           "name": "keyword.operator.logical.lyric"
         }
       ]
@@ -39,7 +41,7 @@
     "literals": {
       "patterns": [
         {
-          "match": "\\b(true|false)\\b",
+          "match": "\\b(true|false|True|False)\\b",
           "name": "constant.language.boolean.lyric"
         }
       ]
@@ -94,6 +96,34 @@
         {
           "match": "\\b(print|input|int|float|str|len|range|type|isinstance|open|append|keys|values)\\b",
           "name": "support.function.builtin.lyric"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "[+\\-*/%=<>!]=",
+          "name": "keyword.operator.assignment.lyric"
+        },
+        {
+          "match": "[+\\-*/%<>!]",
+          "name": "keyword.operator.lyric"
+        },
+        {
+          "match": "[&|]{1,2}",
+          "name": "keyword.operator.logical.lyric"
+        }
+      ]
+    },
+    "symbols": {
+      "patterns": [
+        {
+          "match": "\\+\\+\\+",
+          "name": "keyword.other.special-method.lyric"
+        },
+        {
+          "match": "\\b(self)\\b",
+          "name": "variable.language.special.lyric"
         }
       ]
     }
