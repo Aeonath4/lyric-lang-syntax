@@ -11,14 +11,14 @@ endif
 " ------------------------------------------------------------
 " Keywords
 " ------------------------------------------------------------
-syntax keyword lyricKeyword def class var god bin int flt str rex pyobject None
-syntax keyword lyricKeyword based on public private protected return
-syntax keyword lyricControl if else if else end given done
+syntax keyword lyricKeyword def class var god bin int flt str rex pyobject None return
+syntax keyword lyricControl if else elif end given for done
 syntax keyword lyricControl try catch finally fade raise importpy
-syntax keyword lyricLogical and or not
+syntax keyword lyricControl break continue
+syntax keyword lyricLogical and or not in as
 syntax keyword lyricSpecial self
 syntax keyword lyricBuiltin print input int float str len range type isinstance open append keys values
-syntax keyword lyricConstant true false
+syntax keyword lyricConstant true false True False
 
 " ------------------------------------------------------------
 " Operators and Block Terminators
