@@ -64,10 +64,10 @@ Command Palette → Extensions: Install from VSIX...
 
 ---
 
-**Language ID:** `lyric`
-**Publisher:** MiraNova Studios
-**Location:** `lyric-syntax/vscode/lyric-lang`
-**Maintainer:** Michael (Aeonath) 
-**Last Updated:** October 2025
+**Language ID:** `lyric`  
+**Publisher:** MiraNova Studios  
+**Location:** `lyric-syntax/vscode/lyric-lang`  
+**Maintainer:** Michael (Aeonath)   
+**Last Updated:** October 2025  
 
 
