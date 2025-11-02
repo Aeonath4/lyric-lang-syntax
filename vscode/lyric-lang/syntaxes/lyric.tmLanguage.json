@@ -1,12 +1,12 @@
 {
   "scopeName": "source.lyric",
   "patterns": [
-    { "include": "#keywords" },
-    { "include": "#control" },
-    { "include": "#logical" },
-    { "include": "#literals" },
     { "include": "#comments" },
     { "include": "#strings" },
+    { "include": "#control" },
+    { "include": "#keywords" },
+    { "include": "#logical" },
+    { "include": "#literals" },
     { "include": "#regex" },
     { "include": "#numbers" },
     { "include": "#builtins" },
@@ -25,15 +25,36 @@
     "control": {
       "patterns": [
         {
-          "match": "\\belse\\s+if\\b",
-          "name": "keyword.control.flow.lyric"
+          "name": "meta.conditional-block.lyric",
+          "begin": "\\b(if)\\b(?!\\s*\\w)(?<!else\\s)",
+          "end": "\\b(end)\\b",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.if.lyric"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "keyword.control.flow.lyric"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\belse\\s+if\\b",
+              "name": "keyword.control.else-if.lyric"
+            },
+            {
+              "match": "\\belif\\b",
+              "name": "keyword.control.elif.lyric"
+            },
+            {
+              "match": "\\belse\\b",
+              "name": "keyword.control.else.lyric"
+            }
+          ]
         },
         {
-          "match": "\\b(else|end|given|for|done|try|catch|finally|fade|raise|importpy|break|continue)\\b",
-          "name": "keyword.control.flow.lyric"
-        },
-        {
-          "match": "\\bif\\b",
+          "match": "\\b(given|for|done|try|catch|finally|raise|importpy|break|continue)\\b",
           "name": "keyword.control.flow.lyric"
         }
       ]
@@ -58,7 +79,9 @@
       "patterns": [
         {
           "match": "#.*$",
-          "name": "comment.line.number-sign.lyric"
+          "name": "comment.line.number-sign.lyric",
+          "applyEndPatternLast": true,
+          "contentName": "comment.content.lyric"
         }
       ]
     },
