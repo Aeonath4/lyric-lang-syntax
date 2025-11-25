@@ -2,6 +2,10 @@
 
 Official syntax highlighting packages for the [Lyric programming language](https://lyric-lang.org).
 
+
+This is a test.
+
+
 ---
 
 ## 📂 Repository Structure

@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Lyric
 " Maintainer: MiraNova Studios (Aeonath)
-" Version: 0.6.0
+" Version: 0.7.4
 " Description: Syntax highlighting for the Lyric programming language
 
 if exists("b:current_syntax")
@@ -11,14 +11,24 @@ endif
 " ------------------------------------------------------------
 " Keywords
 " ------------------------------------------------------------
-syntax keyword lyricKeyword def class var god bin int flt str rex pyobject None return
-syntax keyword lyricControl if else elif end given for done
-syntax keyword lyricControl try catch finally fade raise importpy
+syntax keyword lyricKeyword def class return
+syntax keyword lyricType var god bin int flt str rex pyobject pyo arr map obj
+syntax keyword lyricControl if else elif case end given for done
+syntax keyword lyricControl try catch finally fade raise import importpy
 syntax keyword lyricControl break continue
 syntax keyword lyricLogical and or not in as
-syntax keyword lyricSpecial self
-syntax keyword lyricBuiltin print input int float str len range type isinstance open append keys values
+syntax keyword lyricSpecial self None
 syntax keyword lyricConstant true false True False
+
+" ------------------------------------------------------------
+" Built-in Functions (must come before lyricBuiltin keyword)
+" ------------------------------------------------------------
+" Type casting functions - highlighted as built-ins when followed by (
+syntax match lyricBuiltinCall "\<\(int\|float\|str\|arr\|map\|god\|bin\|obj\)\s*("me=e-1
+" Other built-in functions
+syntax match lyricBuiltinCall "\<\(print\|input\|range\|type\|isinstance\|open\|regex\)\s*("me=e-1
+" Print with space (bare syntax: print "text")
+syntax match lyricBuiltinCall "\<print\s\+"
 
 " ------------------------------------------------------------
 " Operators and Block Terminators
@@ -31,9 +41,10 @@ syntax match lyricSymbol "done"
 syntax match lyricSymbol "end"
 
 " ------------------------------------------------------------
-" Regex Literals
+" Regex Literals (removed due to conflict with division operator)
 " ------------------------------------------------------------
-syntax region lyricRegex start=/\// skip=/\\\// end=/\//
+" Note: Regex literals now use regex() function syntax
+" syntax region lyricRegex start=/\// skip=/\\\// end=/\//
 
 " ------------------------------------------------------------
 " Numbers
@@ -55,10 +66,11 @@ syntax match lyricComment "#.*$"
 " Highlighting Links
 " ------------------------------------------------------------
 hi def link lyricKeyword Keyword
+hi def link lyricType Type
 hi def link lyricControl Conditional
 hi def link lyricLogical Operator
 hi def link lyricSpecial Identifier
-hi def link lyricBuiltin Function
+hi def link lyricBuiltinCall Function
 hi def link lyricConstant Constant
 hi def link lyricNumber Number
 hi def link lyricString String
@@ -66,6 +78,9 @@ hi def link lyricRegex String
 hi def link lyricComment Comment
 hi def link lyricOperator Operator
 hi def link lyricSymbol Statement
+
+" Make types green
+hi lyricType ctermfg=green guifg=#00ff00
 
 let b:current_syntax = "lyric"
 

@@ -2,7 +2,7 @@
   "name": "lyric-lang",
   "displayName": "Lyric Language Support",
   "description": "Official VSCode extension providing syntax highlighting and language configuration for the Lyric programming language.",
-  "version": "0.6.4",
+  "version": "0.7.4",
   "publisher": "miranovastudios",
   "license": "MIT",
   "repository": {
