@@ -4,7 +4,7 @@ Official VS Code extension providing syntax highlighting and language configurat
 
 ## Version
 
-0.8.4
+0.8.5
 
 ## Features
 
