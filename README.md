@@ -1,48 +1,50 @@
-# Lyric Language Support for VSCode
+# Lyric Language Support
 
-Official VSCode extension providing comprehensive syntax highlighting and language configuration for the **Lyric programming language** (`.ly` files).
+Official VS Code extension providing syntax highlighting and language configuration for the **Lyric programming language** (`.ly` files).
+
+## Version
+
+0.8.4
 
 ## Features
 
 ### Syntax Highlighting
-- **Keywords**: `def`, `class`, `var`, `int`, `str`, `flt`, `god`, `bin`, `rex`, `pyobject`, `None`, `return`
-- **Control Flow**: `if`, `else if`, `else`, `end`, `given`, `for`, `done`, `try`, `catch`, `finally`, `fade`, `raise`, `importpy`, `break`, `continue`
-- **Logical Operators**: `and`, `or`, `not`, `in`, `as`
-- **Built-in Functions**: `print`, `input`, `int`, `float`, `str`, `len`, `range`, `type`, `isinstance`, `open`, `regex`, `append`, `keys`, `values`
-- **Literals**: Numbers, strings (single and double quotes), boolean values (`true`, `false`, `True`, `False`)
-- **Regex Patterns**: Constructor-based syntax `regex("/pattern/")` with proper highlighting
-- **Comments**: `#` style comments
-- **Operators**: Arithmetic, comparison, and assignment operators
-- **Special Symbols**: `+++`, `self`
+
+- **Types & Declarations**: `def`, `class`, `var`, `int`, `flt`, `str`, `god`, `bin`, `rex`, `arr`, `map`, `obj`, `dsk`, `pyobject`
+- **Control Flow**: `if`, `elif`, `else`, `case`, `given`, `for`, `done`, `end`, `try`, `catch`, `finally`, `fade`, `raise`, `import`, `importpy`, `break`, `continue`, `return`, `as`, `in`, `and`, `or`, `not`
+- **Access Modifiers**: `public`, `private`, `protected`
+- **Inheritance**: `based on`
+- **Built-in Functions**: `print`, `input`, `range`, `open`, `type`, `isinstance`, `regex`, `exec`, `getopts`
+- **Constants**: `true`, `false`, `True`, `False`, `None`
+- **Operators**: Arithmetic, comparison, assignment, file I/O (`->`, `->>`, `<-`), and shell chain (`&&`, `||`, `|`)
+- **Class Terminator**: `+++`
+- **Comments**: `#` line comments
 
 ### Language Configuration
-- **Bracket Matching**: Automatic matching for `{}`, `()`, `[]`, and Lyric-specific pairs (`class`/`+++`, `try`/`fade`, `given`/`done`, `for`/`done`, `if`/`end`)
+
+- **Bracket Matching**: Automatic matching for `{}`, `()`, and `[]`
 - **Auto-closing Pairs**: Automatic closing of quotes and brackets
 - **Code Folding**: Foldable blocks for `class`, `try`, `given`, `for`, and `if` statements
 - **Word Pattern**: Proper identifier recognition for Lyric variables and functions
 
-## Installing the Lyric VSCode Extension
+## Installing
 
-### Option 1: Install from Source Directory
-1. Open the extension folder in VS Code (the one containing `package.json`).
-2. Press **F5** or go to **Run → Start Debugging**.
-3. A new **Extension Development Host** window will open with the extension loaded.
-4. Test and verify functionality within that window.
+### From VSIX
 
-### Option 2: Install from VSIX File
-1. Open VS Code and go to the **Extensions** sidebar (`Ctrl + Shift + X`).
-2. Click the **⋮ (menu)** icon in the top-right corner.
-3. Select **"Install from VSIX…"**.
-4. Choose your built `.vsix` file (e.g., `lyric-lang-0.6.0.vsix`).
-5. Wait for the success message, then reload VS Code if prompted.
+1. Open VS Code and go to the **Extensions** sidebar (`Ctrl+Shift+X`).
+2. Click the **⋮** menu icon in the top-right corner.
+3. Select **Install from VSIX…** and choose your `.vsix` file.
+4. Reload VS Code if prompted.
 
-## Version
-**0.6.4** - Updated for Lyric 0.6.4 with comprehensive language support including:
-- Constructor recognition (`def ClassName()`)
-- Exception type binding (`catch IndexError as e`)
-- Loop control (`break`, `continue`)
-- Shebang support
-- Function return type specification
-- Regex constructor syntax (`regex("/pattern/")`)
-- Enhanced syntax highlighting and language configuration
+### From Source
 
+1. Open the extension folder in VS Code.
+2. Press **F5** to launch an Extension Development Host with the extension loaded.
+
+## Requirements
+
+VS Code 1.80.0 or later.
+
+## License
+
+See [LICENSE](LICENSE) for details.

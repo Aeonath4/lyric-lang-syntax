@@ -6,6 +6,9 @@
     { "include": "#strings" },
     { "include": "#numbers" },
     { "include": "#blockclose" },
+    { "include": "#constants" },
+    { "include": "#modifiers" },
+    { "include": "#based_on" },
     { "include": "#keywords" },
     { "include": "#types" },
     { "include": "#builtins" },
@@ -65,11 +68,41 @@
       ]
     },
 
+    "constants": {
+      "patterns": [
+        {
+          "comment": "Boolean and None literals (all forms recognized by the lexer)",
+          "match": "\\b(true|false|True|False|None)\\b",
+          "name": "constant.language"
+        }
+      ]
+    },
+
+    "modifiers": {
+      "patterns": [
+        {
+          "comment": "Access modifiers (lexer.KEYWORDS)",
+          "match": "\\b(public|private|protected)\\b",
+          "name": "storage.modifier"
+        }
+      ]
+    },
+
+    "based_on": {
+      "patterns": [
+        {
+          "comment": "Inheritance keyword - parsed as two IDENT tokens by the parser",
+          "match": "\\bbased\\s+on\\b",
+          "name": "keyword.control"
+        }
+      ]
+    },
+
     "keywords": {
       "patterns": [
         {
-          "comment": "Control-flow keywords (purple)",
-          "match": "\\b(if|elif|else|case|given|done|for|try|catch|finally|fade|raise|end|import|importpy|break|continue|return|as|in)\\b",
+          "comment": "Control-flow keywords (confirmed in lexer.KEYWORDS)",
+          "match": "\\b(if|elif|else|case|given|for|done|end|try|catch|finally|fade|raise|import|importpy|break|continue|return|as|in|and|or|not)\\b",
           "name": "keyword.control"
         }
       ]
@@ -78,8 +111,8 @@
     "types": {
       "patterns": [
         {
-          "comment": "Type declarations and definitions (yellow)",
-          "match": "\\b(def|class|var|god|bin|int|flt|str|rex|pyobject|pyo|arr|map|obj)\\b",
+          "comment": "Type keywords (confirmed in lexer TYPE_OR_IDENT and parser valid_types)",
+          "match": "\\b(def|class|var|god|bin|int|flt|str|rex|pyobject|arr|map|obj|dsk)\\b",
           "name": "storage.type"
         }
       ]
@@ -88,8 +121,8 @@
     "builtins": {
       "patterns": [
         {
-          "comment": "Built-in functions (cyan)",
-          "match": "\\b(print|input|range|open|type|isinstance|regex)\\b",
+          "comment": "Built-in functions (confirmed referenced by parser or spec)",
+          "match": "\\b(print|input|range|open|type|isinstance|regex|exec|getopts)\\b",
           "name": "support.function.builtin"
         }
       ]
@@ -98,8 +131,23 @@
     "operators": {
       "patterns": [
         {
-          "comment": "Arithmetic / comparison / assignment",
-          "match": "(==|!=|<=|>=|=|[+\\-*/%]|<|>)",
+          "comment": "File I/O operators (lexer: FILE_APPEND, FILE_WRITE, FILE_READ)",
+          "match": "->>|->|<-",
+          "name": "keyword.operator"
+        },
+        {
+          "comment": "Shell chain operators (lexer: AND, OR, PIPE)",
+          "match": "&&|\\|\\||\\|",
+          "name": "keyword.operator"
+        },
+        {
+          "comment": "Comparison operators",
+          "match": "(==|!=|<=|>=|<|>)",
+          "name": "keyword.operator"
+        },
+        {
+          "comment": "Arithmetic and assignment operators",
+          "match": "[+\\-*/%=]",
           "name": "keyword.operator"
         }
       ]
