@@ -31,6 +31,10 @@ Official VS Code extension providing syntax highlighting and language configurat
 
 ### From VSIX
 
+```
+npx vsce package
+```
+
 1. Open VS Code and go to the **Extensions** sidebar (`Ctrl+Shift+X`).
 2. Click the **⋮** menu icon in the top-right corner.
 3. Select **Install from VSIX…** and choose your `.vsix` file.
