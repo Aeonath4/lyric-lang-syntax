@@ -9,8 +9,8 @@
     { "include": "#constants" },
     { "include": "#modifiers" },
     { "include": "#based_on" },
-    { "include": "#keywords" },
     { "include": "#types" },
+    { "include": "#keywords" },
     { "include": "#builtins" },
     { "include": "#operators" },
     { "include": "#punctuation" }
@@ -20,9 +20,7 @@
     "comments": {
       "patterns": [
         {
-          "begin": "#",
-          "beginCaptures": { "0": { "name": "punctuation.definition.comment" } },
-          "end": "$",
+          "match": "#[^\n]*",
           "name": "comment.line.number-sign"
         }
       ]
@@ -62,7 +60,7 @@
       "patterns": [
         {
           "comment": "+++ only when used alone on its own line to close class",
-          "match": "^\\s*\\+\\+\\+\\s*$",
+          "match": "\\+\\+\\+",
           "name": "storage.type"
         }
       ]
