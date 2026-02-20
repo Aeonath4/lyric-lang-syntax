@@ -1,37 +1,48 @@
-# Lyric Language Syntax
+# Lyric Language Support for VSCode
 
-Official syntax highlighting packages for the [Lyric programming language](https://lyric-lang.org).
+Official VSCode extension providing comprehensive syntax highlighting and language configuration for the **Lyric programming language** (`.ly` files).
 
+## Features
 
-This is a test.
+### Syntax Highlighting
+- **Keywords**: `def`, `class`, `var`, `int`, `str`, `flt`, `god`, `bin`, `rex`, `pyobject`, `None`, `return`
+- **Control Flow**: `if`, `else if`, `else`, `end`, `given`, `for`, `done`, `try`, `catch`, `finally`, `fade`, `raise`, `importpy`, `break`, `continue`
+- **Logical Operators**: `and`, `or`, `not`, `in`, `as`
+- **Built-in Functions**: `print`, `input`, `int`, `float`, `str`, `len`, `range`, `type`, `isinstance`, `open`, `regex`, `append`, `keys`, `values`
+- **Literals**: Numbers, strings (single and double quotes), boolean values (`true`, `false`, `True`, `False`)
+- **Regex Patterns**: Constructor-based syntax `regex("/pattern/")` with proper highlighting
+- **Comments**: `#` style comments
+- **Operators**: Arithmetic, comparison, and assignment operators
+- **Special Symbols**: `+++`, `self`
 
+### Language Configuration
+- **Bracket Matching**: Automatic matching for `{}`, `()`, `[]`, and Lyric-specific pairs (`class`/`+++`, `try`/`fade`, `given`/`done`, `for`/`done`, `if`/`end`)
+- **Auto-closing Pairs**: Automatic closing of quotes and brackets
+- **Code Folding**: Foldable blocks for `class`, `try`, `given`, `for`, and `if` statements
+- **Word Pattern**: Proper identifier recognition for Lyric variables and functions
 
----
+## Installing the Lyric VSCode Extension
 
-## 📂 Repository Structure
+### Option 1: Install from Source Directory
+1. Open the extension folder in VS Code (the one containing `package.json`).
+2. Press **F5** or go to **Run → Start Debugging**.
+3. A new **Extension Development Host** window will open with the extension loaded.
+4. Test and verify functionality within that window.
 
-```
-lyric-lang-syntax/
-├── vim/ # Vim syntax highlighting, filetype detection, and indentation support
-└── vscode/ # VS Code extension providing syntax highlighting and basic snippets
-```
+### Option 2: Install from VSIX File
+1. Open VS Code and go to the **Extensions** sidebar (`Ctrl + Shift + X`).
+2. Click the **⋮ (menu)** icon in the top-right corner.
+3. Select **"Install from VSIX…"**.
+4. Choose your built `.vsix` file (e.g., `lyric-lang-0.6.0.vsix`).
+5. Wait for the success message, then reload VS Code if prompted.
 
-## 🧪 Language Overview
+## Version
+**0.6.4** - Updated for Lyric 0.6.4 with comprehensive language support including:
+- Constructor recognition (`def ClassName()`)
+- Exception type binding (`catch IndexError as e`)
+- Loop control (`break`, `continue`)
+- Shebang support
+- Function return type specification
+- Regex constructor syntax (`regex("/pattern/")`)
+- Enhanced syntax highlighting and language configuration
 
-Lyric is an expressive, Python-powered programming language designed to make code more intuitive and readable.  
-Learn more and explore documentation at [lyric-lang.org](https://lyric-lang.org).
-
----
-
-## 🛠 Maintainer
-
-Maintained with ❤️ by **[MiraNova Studios](https://miranova.studio)**  
-Chief Architect: ChatGPT (Architect)  
-Studio Lead: Michael (Aeonath)
-
----
-
-## 📜 License
-
-Distributed under the MIT License.  
-See `LICENSE` for more information.

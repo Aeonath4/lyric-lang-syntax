@@ -1,0 +1,117 @@
+{
+  "scopeName": "source.lyric",
+  "name": "Lyric",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#blockclose" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#builtins" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "#",
+          "beginCaptures": { "0": { "name": "punctuation.definition.comment" } },
+          "end": "$",
+          "name": "comment.line.number-sign"
+        }
+      ]
+    },
+
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape" }
+          ]
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape" }
+          ]
+        }
+      ]
+    },
+
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+(\\.[0-9]+)?\\b",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+
+    "blockclose": {
+      "patterns": [
+        {
+          "comment": "+++ only when used alone on its own line to close class",
+          "match": "^\\s*\\+\\+\\+\\s*$",
+          "name": "storage.type"
+        }
+      ]
+    },
+
+    "keywords": {
+      "patterns": [
+        {
+          "comment": "Control-flow keywords (purple)",
+          "match": "\\b(if|elif|else|case|given|done|for|try|catch|finally|fade|raise|end|import|importpy|break|continue|return|as|in)\\b",
+          "name": "keyword.control"
+        }
+      ]
+    },
+
+    "types": {
+      "patterns": [
+        {
+          "comment": "Type declarations and definitions (yellow)",
+          "match": "\\b(def|class|var|god|bin|int|flt|str|rex|pyobject|pyo|arr|map|obj)\\b",
+          "name": "storage.type"
+        }
+      ]
+    },
+
+    "builtins": {
+      "patterns": [
+        {
+          "comment": "Built-in functions (cyan)",
+          "match": "\\b(print|input|range|open|type|isinstance|regex)\\b",
+          "name": "support.function.builtin"
+        }
+      ]
+    },
+
+    "operators": {
+      "patterns": [
+        {
+          "comment": "Arithmetic / comparison / assignment",
+          "match": "(==|!=|<=|>=|=|[+\\-*/%]|<|>)",
+          "name": "keyword.operator"
+        }
+      ]
+    },
+
+    "punctuation": {
+      "patterns": [
+        {
+          "match": "[\\[\\]\\(\\)\\{\\},\\.:]",
+          "name": "punctuation.separator"
+        }
+      ]
+    }
+  }
+}

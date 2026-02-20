@@ -28,7 +28,7 @@
   ],
   "folding": {
     "markers": {
-      "start": "^\\s*(class|try|given|for|if)\\b",
+      "start": "^\\s*(class|try|given|for|if|case|else|catch|finally)\\b",
       "end": "^\\s*(\\+\\+\\+|fade|done|end)\\b"
     }
   },
